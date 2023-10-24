@@ -46,7 +46,8 @@
 }
 
 .container{
-  width: 95vw;
+  flex: 95vw;
+  /* width: 95vw; */
   height: 95vh;
   display:flex;
   flex-flow: row wrap;
