@@ -20,7 +20,8 @@ function App() {
     const renderer = new THREE.WebGLRenderer({
       canvas: document.querySelector("#threejs-canvas")
     });
-    renderer.setSize( window.innerWidth, window.innerHeight )
+    renderer.setSize( window.innerWidth/2, window.innerHeight/2)
+    camera.aspect = window.innerWidth / window.innerHeight;
 
     // document.body.appendChild( renderer.domElement );
 
@@ -32,8 +33,12 @@ function App() {
     camera.position.z = 5;
 
 
+
     function animate() {
       requestAnimationFrame( animate );
+      cube.rotation.x += 0.01;
+      cube.rotation.y += 0.01;
+
       renderer.render( scene, camera );
     }
     animate();
@@ -62,7 +67,6 @@ function App() {
                 </audio>
           </div>
           <div className="app-container">
-              <div className="app" >Hello</div>
               <canvas id="threejs-canvas"></canvas>
           </div>
       </div>
